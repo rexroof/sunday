@@ -1,0 +1,16 @@
+[nfl_venue:children]
+arizona
+atlanta
+baltimore
+
+[nfl_venue:vars]
+provision_drives=true
+dts_enabled=true
+
+[arizona]
+ari-1 ansible_ssh_host=192.168.x.x ilo_host=192.168.x.x
+ari-2 ansible_ssh_host=192.168.x.x ilo_host=192.168.x.x
+
+[arizona:vars]
+machine_gw=192.168.x.x
+venue_name="Phoenix Stadium"

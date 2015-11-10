@@ -1,0 +1,685 @@
+---
+
+- group: venues
+  groups:
+  - arizona
+  - atlanta
+  - baltimore
+  - buffalo
+  - carolina
+  - chicago
+  - cincinnati
+  - cleveland
+  - dallas
+  - denver
+  - detroit
+  - greenbay
+  - houston
+  - indianapolis
+  - jacksonville
+  - kansascity
+  - miami
+  - minnesota
+  - newengland
+  - neworleans
+  - newyork
+  - oakland
+  - philadelphia
+  - pittsburgh
+  - sandiego
+  - seattle
+  - sanfrancisco
+  - stlouis
+  - tampabay
+  - tennessee
+  - washington
+  - london
+  vars:
+  - provision_drives: true
+  - vds_enabled: true
+  - dns_one: 192.168.4.4
+  - dns_two: 192.168.8.8
+  - machine_mask: 255.255.255.192
+  - config_directory: venue_config
+
+- host: ari-1
+  vars:
+  - ansible_ssh_host: 192.168.218.99
+
+- host: ari-2
+  vars:
+  - ansible_ssh_host: 192.168.218.66
+
+- group: arizona
+  hosts:
+  - ari-1
+  - ari-2
+  vars:
+  - data_ip: 192.168.218.21
+  - machine_gw: 192.168.218.1
+  - venue_name: Phoenix Stadium
+  - short_name: ARI
+  - site_id: 1907
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: atl-1
+  vars:
+  - ansible_ssh_host: 192.168.21.99
+
+- host: atl-2
+  vars:
+  - ansible_ssh_host: 192.168.21.66
+
+- group: atlanta
+  hosts:
+  - atl-1
+  - atl-2
+  vars:
+  - data_ip: 192.168.21.21
+  - machine_gw: 192.168.21.1
+  - venue_name: Frogger Dome
+  - short_name: ATL
+  - site_id: 2053
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: bal-1
+  vars:
+  - ansible_ssh_host: 192.168.22.99
+- host: bal-2
+  vars:
+  - ansible_ssh_host: 192.168.22.66
+- group: baltimore
+  hosts:
+  - bal-1
+  - bal-2
+  vars:
+  - data_ip: 192.168.22.21
+  - machine_gw: 192.168.22.1
+  - venue_name: Bank Stadium
+  - short_name: BAL
+  - site_id: 3695
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: buf-1
+  vars:
+  - ansible_ssh_host: 192.168.219.99
+- host: buf-2
+  vars:
+  - ansible_ssh_host: 192.168.219.66
+- group: buffalo
+  hosts:
+  - buf-1
+  - buf-2
+  vars:
+  - data_ip: 192.168.219.21
+  - machine_gw: 192.168.219.1
+  - venue_name: Read Write Stadium
+  - short_name: BUF
+  - site_id: 3770
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: car-1
+  vars:
+  - ansible_ssh_host: 192.168.23.99
+- host: car-2
+  vars:
+  - ansible_ssh_host: 192.168.23.66
+- group: carolina
+  hosts:
+  - car-1
+  - car-2
+  vars:
+  - data_ip: 192.168.23.21
+  - machine_gw: 192.168.23.1
+  - venue_name: Another Bank Stadium
+  - short_name: CAR
+  - site_id: 1769
+  - home_locker_sensors: 30,31
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: chi-1
+  vars:
+  - ansible_ssh_host: 192.168.24.99
+- host: chi-2
+  vars:
+  - ansible_ssh_host: 192.168.24.66
+- group: chicago
+  hosts:
+  - chi-1
+  - chi-2
+  vars:
+  - data_ip: 192.168.24.21
+  - machine_gw: 192.168.24.1
+  - venue_name: Private Field
+  - short_name: CHI
+  - site_id: 4620
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: cin-1
+  vars:
+  - ansible_ssh_host: 192.168.25.99
+- host: cin-2
+  vars:
+  - ansible_ssh_host: 192.168.25.66
+- group: cincinnati
+  hosts:
+  - cin-1
+  - cin-2
+  vars:
+  - data_ip: 192.168.25.21
+  - machine_gw: 192.168.25.1
+  - venue_name: Paul Blart Stadium
+  - short_name: CIN
+  - site_id: 3530
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22
+
+- host: cle-1
+  vars:
+  - ansible_ssh_host: 192.168.220.99
+- host: cle-2
+  vars:
+  - ansible_ssh_host: 192.168.220.66
+- group: cleveland
+  hosts:
+  - cle-1
+  - cle-2
+  vars:
+  - data_ip: 192.168.220.21
+  - machine_gw: 192.168.220.1
+  - venue_name: Energizer Field
+  - short_name: CLE
+  - site_id: 1048
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: dal-1
+  vars:
+  - ansible_ssh_host: 192.168.221.99
+- host: dal-2
+  vars:
+  - ansible_ssh_host: 192.168.221.66
+- group: dallas
+  hosts:
+  - dal-1
+  - dal-2
+  vars:
+  - data_ip: 192.168.221.21
+  - machine_gw: 192.168.221.1
+  - venue_name: Comcast MegaDome
+  - short_name: DAL
+  - site_id: 4948
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40,41
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: den-1
+  vars:
+  - ansible_ssh_host: 192.168.26.99
+- host: den-2
+  vars:
+  - ansible_ssh_host: 192.168.26.66
+- group: denver
+  hosts:
+  - den-1
+  - den-2
+  vars:
+  - data_ip: 192.168.26.21
+  - machine_gw: 192.168.26.1
+  - venue_name: Foot Locker at the Mall
+  - short_name: DEN
+  - site_id: 5786
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: det-1
+  vars:
+  - ansible_ssh_host: 192.168.27.99
+- host: det-2
+  vars:
+  - ansible_ssh_host: 192.168.27.66
+- group: detroit
+  hosts:
+  - det-1
+  - det-2
+  vars:
+  - data_ip: 192.168.27.21
+  - machine_gw: 192.168.27.1
+  - venue_name: Model T Field
+  - short_name: DET
+  - site_id: 2026
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+- host: gb-1
+  vars:
+  - ansible_ssh_host: 192.168.28.99
+- host: gb-2
+  vars:
+  - ansible_ssh_host: 192.168.28.66
+- group: greenbay
+  hosts:
+  - gb-1
+  - gb-2
+  vars:
+  - data_ip: 192.168.28.21
+  - machine_gw: 192.168.28.1
+  - venue_name: Cheese Field
+  - short_name: GB
+  - site_id: 2606
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,26
+
+- host: hou-1
+  vars:
+  - ansible_ssh_host: 192.168.29.99
+- host: hou-2
+  vars:
+  - ansible_ssh_host: 192.168.29.66
+- group: houston
+  hosts:
+  - hou-1
+  - hou-2
+  vars:
+  - data_ip: 192.168.29.21
+  - machine_gw: 192.168.29.1
+  - venue_name: Duracell Stadium
+  - short_name: HOU
+  - site_id: 3698
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: ind-1
+  vars:
+  - ansible_ssh_host: 192.168.222.99
+- host: ind-2
+  vars:
+  - ansible_ssh_host: 192.168.222.66
+- group: indianapolis
+  hosts:
+  - ind-1
+  - ind-2
+  vars:
+  - data_ip: 192.168.222.21
+  - machine_gw: 192.168.222.1
+  - venue_name: Gas and Water Stadium
+  - short_name: IND
+  - site_id: 2878
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: jac-1
+  vars:
+  - ansible_ssh_host: 192.168.210.99
+- host: jac-2
+  vars:
+  - ansible_ssh_host: 192.168.210.66
+- group: jacksonville
+  hosts:
+  - jac-1
+  - jac-2
+  vars:
+  - data_ip: 192.168.210.21
+  - machine_gw: 192.168.210.1
+  - venue_name: Florida Field
+  - short_name: JAC
+  - site_id: 2049
+  - home_locker_sensors: 30,31
+  - away_locker_sensors: 40,41
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: kc-1
+  vars:
+  - ansible_ssh_host: 192.168.223.99
+- host: kc-2
+  vars:
+  - ansible_ssh_host: 192.168.223.66
+- group: kansascity
+  hosts:
+  - kc-1
+  - kc-2
+  vars:
+  - data_ip: 192.168.223.21
+  - machine_gw: 192.168.223.1
+  - venue_name: Bow and Arrow Stadium
+  - short_name: KC
+  - site_id: 1552
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: mia-1
+  vars:
+  - ansible_ssh_host: 192.168.211.99
+- host: mia-2
+  vars:
+  - ansible_ssh_host: 192.168.211.66
+- group: miami
+  hosts:
+  - mia-1
+  - mia-2
+  vars:
+  - data_ip: 192.168.211.21
+  - machine_gw: 192.168.211.1
+  - venue_name: Sun Chips Stadium
+  - short_name: MIA
+  - site_id: 2475
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: min-1
+  vars:
+  - ansible_ssh_host: 192.168.224.99
+- host: min-2
+  vars:
+  - ansible_ssh_host: 192.168.224.66
+- group: minnesota
+  hosts:
+  - min-1
+  - min-2
+  vars:
+  - data_ip: 192.168.224.21
+  - machine_gw: 192.168.224.1
+  - venue_name: Too Many Banks Stadium
+  - short_name: MIN
+  - site_id: 5606
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40,41
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: ne-1
+  vars:
+  - ansible_ssh_host: 192.168.212.99
+- host: ne-2
+  vars:
+  - ansible_ssh_host: 192.168.212.66
+- group: newengland
+  hosts:
+  - ne-1
+  - ne-2
+  vars:
+  - data_ip: 192.168.212.21
+  - machine_gw: 192.168.212.1
+  - venue_name: Razor Blade Stadium
+  - short_name: NE
+  - site_id: 1065
+  - home_locker_sensors: 30,31
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: no-1
+  vars:
+  - ansible_ssh_host: 192.168.213.99
+- host: no-2
+  vars:
+  - ansible_ssh_host: 192.168.213.66
+- group: neworleans
+  hosts:
+  - no-1
+  - no-2
+  vars:
+  - data_ip: 192.168.213.21
+  - machine_gw: 192.168.213.1
+  - venue_name: BMW Superdome
+  - short_name: NO
+  - site_id: 2870
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: ny-1
+  vars:
+  - ansible_ssh_host: 192.168.225.99
+- host: ny-2
+  vars:
+  - ansible_ssh_host: 192.168.225.66
+- group: newyork
+  hosts:
+  - ny-1
+  - ny-2
+  vars:
+  - data_ip: 192.168.225.21
+  - machine_gw: 192.168.225.1
+  - venue_name: Charlie Brown Stadium
+  - short_name: NY
+  - site_id: 3757
+  - home_locker_sensors: 30,31
+  - away_locker_sensors: 40,41
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: oak-1
+  vars:
+  - ansible_ssh_host: 192.168.214.99
+- host: oak-2
+  vars:
+  - ansible_ssh_host: 192.168.214.66
+- group: oakland
+  hosts:
+  - oak-1
+  - oak-2
+  vars:
+  - data_ip: 192.168.214.21
+  - machine_gw: 192.168.214.1
+  - venue_name: Osco Coliseum
+  - short_name: OAK
+  - site_id: 3225
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+- host: phi-1
+  vars:
+  - ansible_ssh_host: 192.168.227.99
+- host: phi-2
+  vars:
+  - ansible_ssh_host: 192.168.227.66
+- group: philadelphia
+  hosts:
+  - phi-1
+  - phi-2
+  vars:
+  - data_ip: 192.168.227.21
+  - machine_gw: 192.168.227.1
+  - venue_name: Zombie Lincoln Field
+  - short_name: PHI
+  - site_id: 2769
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: pit-1
+  vars:
+  - ansible_ssh_host: 192.168.228.99
+- host: pit-2
+  vars:
+  - ansible_ssh_host: 192.168.228.66
+- group: pittsburgh
+  hosts:
+  - pit-1
+  - pit-2
+  vars:
+  - data_ip: 192.168.228.21
+  - machine_gw: 192.168.228.1
+  - venue_name: Catsup Field
+  - short_name: PIT
+  - site_id: 5411
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: sd-1
+  vars:
+  - ansible_ssh_host: 192.168.229.99
+- host: sd-2
+  vars:
+  - ansible_ssh_host: 192.168.229.66
+- group: sandiego
+  hosts:
+  - sd-1
+  - sd-2
+  vars:
+  - data_ip: 192.168.229.21
+  - machine_gw: 192.168.229.1
+  - venue_name: Burger and Fries Stadium
+  - short_name: SD
+  - site_id: 4200
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40,41
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: sea-1
+  vars:
+  - ansible_ssh_host: 192.168.230.99
+- host: sea-2
+  vars:
+  - ansible_ssh_host: 192.168.230.66
+- group: seattle
+  hosts:
+  - sea-1
+  - sea-2
+  vars:
+  - data_ip: 192.168.230.21
+  - machine_gw: 192.168.230.1
+  - venue_name: ChainLink Field
+  - short_name: SEA
+  - site_id: 5315
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40,41
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: sf-1
+  vars:
+  - ansible_ssh_host: 192.168.215.99
+- host: sf-2
+  vars:
+  - ansible_ssh_host: 192.168.215.66
+- group: sanfrancisco
+  hosts:
+  - sf-1
+  - sf-2
+  vars:
+  - data_ip: 192.168.215.21
+  - machine_gw: 192.168.215.1
+  - venue_name: Wrangler Stadium
+  - short_name: SF
+  - site_id: 2099
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: stl-1
+  vars:
+  - ansible_ssh_host: 192.168.216.99
+- host: stl-2
+  vars:
+  - ansible_ssh_host: 192.168.216.66
+- group: stlouis
+  hosts:
+  - stl-1
+  - stl-2
+  vars:
+  - data_ip: 192.168.216.21
+  - machine_gw: 192.168.216.1
+  - venue_name: Edward Scissorhands Dome
+  - short_name: STL
+  - site_id: 5189
+  - home_locker_sensors: 30,31
+  - away_locker_sensors: 40,41
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+- host: tb-1
+  vars:
+  - ansible_ssh_host: 192.168.231.99
+- host: tb-2
+  vars:
+  - ansible_ssh_host: 192.168.231.66
+- group: tampabay
+  hosts:
+  - tb-1
+  - tb-2
+  vars:
+  - data_ip: 192.168.231.21
+  - machine_gw: 192.168.231.1
+  - venue_name: James Brown Stadium
+  - short_name: TB
+  - site_id: 3697
+  - home_locker_sensors: 40
+  - away_locker_sensors: 30
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: ten-1
+  vars:
+  - ansible_ssh_host: 192.168.232.99
+- host: ten-2
+  vars:
+  - ansible_ssh_host: 192.168.232.66
+- group: tennessee
+  hosts:
+  - ten-1
+  - ten-2
+  vars:
+  - data_ip: 192.168.232.21
+  - machine_gw: 192.168.232.1
+  - venue_name: Liquid Propane Field
+  - short_name: TEN
+  - site_id: 2350
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: was-1
+  vars:
+  - ansible_ssh_host: 192.168.217.99
+- host: was-2
+  vars:
+  - ansible_ssh_host: 192.168.217.66
+- group: washington
+  hosts:
+  - was-1
+  - was-2
+  vars:
+  - data_ip: 192.168.217.21
+  - machine_gw: 192.168.217.1
+  - venue_name: Overnight Field
+  - short_name: WAS
+  - site_id: 2389
+  - home_locker_sensors: 30
+  - away_locker_sensors: 40
+  - field_sensors: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+- host: lon-1
+  vars:
+  - ansible_ssh_host: 192.168.233.99
+- host: lon-2
+  vars:
+  - ansible_ssh_host: 192.168.233.66
+- group: london
+  hosts:
+  - lon-1
+  - lon-2
+  vars:
+  - data_ip: 192.168.233.21
+  - machine_gw: 192.168.233.1
+  - venue_name: One Direction Stadium
+  - short_name: LON
+  - site_id: 5525
+
